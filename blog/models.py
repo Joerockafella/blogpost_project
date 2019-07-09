@@ -14,6 +14,8 @@ class Post(models.Model):
     def __str__(self):
         return self.title
 
+    # This redirect the user at post detail page after creating a new post
+    #if you want it to redirect to home just set an attribute in create view called success_url and set it to home page
     def get_absolute_url(self):
         return reverse('post-detail', kwargs={'pk':self.pk})
 
